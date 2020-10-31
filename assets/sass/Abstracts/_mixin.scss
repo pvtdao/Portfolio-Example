@@ -1,0 +1,83 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @content;
+}
+
+@mixin under-line-title ($title, $bgc: $white-color, $color-line: #000){
+    position: relative;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 180px;
+        height: 3px;
+        background-color: $color-line;
+        transform: translateX(-50%);
+    }
+    
+    &::after{
+        content: "#{$title}";
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        padding: 5px;
+        font-size: 2rem;
+        color: $primary-color;
+        background-color: $bgc;
+        transform: translateX(-50%);
+    }
+}
+
+@mixin button-main {
+    display: inline-block;
+    background-color: $primary-color;
+    color: $white-color;
+    font-size: 2.5rem;
+    padding: 12px 36px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 2px solid $primary-color;
+    transition: all .3s ease;
+}
+
+@mixin responsive ($breakpoint) {
+    @if $breakpoint == SmallMobile{
+        @media (max-width: 350px){
+            @content;
+        }
+    }
+
+    @if $breakpoint == Mobile {
+        @media (max-width: 739px){
+            @content;
+        }
+    }
+
+    @if $breakpoint == MobileTablet {
+        @media (max-width: 1023px){
+            @content
+        };
+    }  
+
+    @if $breakpoint == Tablet {
+        @media (min-width: 740px) and (max-width: 1023px){
+            @content;
+        };
+    }
+
+    @if $breakpoint == PC {
+        @media (min-width: 1023px){
+            @content
+        };
+    }
+}

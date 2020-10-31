@@ -1,0 +1,28 @@
+.owl-carousel{
+    width: unset !important;
+}
+
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none !important;
+    border-radius: 50%;
+    border: 2px solid $primary-color !important;
+    transition: all .3s ease;
+
+    &.active{
+        width: 35px;
+        border-radius: 14px;
+        background-color: $primary-color !important;
+    }
+
+    &:hover{
+        background-color: $primary-color !important;
+    }
+}

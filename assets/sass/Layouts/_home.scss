@@ -1,0 +1,69 @@
+.home{
+    display: flex;
+    background: url("../images/banner.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    color: $white-color;
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif; 
+
+    &__content{
+        
+        @include responsive(Mobile) {
+            padding: 0 16px;
+        }
+    }
+
+    &__text{
+
+        &-1{
+            font-size: 2.7rem;
+        }
+
+        &-2{
+            font-size: 7.5rem;
+            font-weight: 600;
+            margin-left: -3px;
+
+            @include responsive(Mobile) {
+                font-size: 4.6rem;
+            }
+        }
+
+        &-3{
+            font-size: 4rem;
+            margin: 5px 0;
+
+            @include responsive(Mobile) {
+                font-size: 2.6rem;
+            }
+
+            & span{
+                font-size: 4rem;
+                color: $primary-color;
+                font-weight: 500;
+
+                @include responsive(Mobile) {
+                    font-size: 3.2rem;
+                }
+            }
+        }
+    }
+
+    &__hire {
+
+        &-btn {
+            @include button-main;
+
+            &:hover {
+                color: $white-color;
+                background-color: transparent;
+            }
+
+            @include responsive(Mobile) {
+                padding: 12px 30px;
+            }
+        }
+    }
+}

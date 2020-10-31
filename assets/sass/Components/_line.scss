@@ -1,0 +1,48 @@
+.line{
+    height: 5px;
+    width: 100%;
+    background-color: lightgrey;
+    position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 80%;
+        left: 0;
+        top: 0;
+        background: $primary-color;
+    }
+
+    &--html{
+        
+        &::before{
+            width: 90%;
+        }
+    }
+
+    &--css{
+        
+        &::before{
+            width: 90%;
+        }
+    }
+    &--js{
+        
+        &::before{
+            width: 70%;
+        }
+    }
+    &--nodeJs{
+        
+        &::before{
+            width: 60%;
+        }
+    }
+    &--sql{
+        
+        &::before{
+            width: 60%;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+.about {
+    font-family: 'Poppins', sans-serif;
+    padding: 100px 0;
+    
+    &__title{
+        @include under-line-title(who i am)
+    }
+
+    &__main {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        
+        @include responsive(MobileTablet) {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        
+
+        &-left{
+
+            @include responsive(MobileTablet) {
+                display: flex;
+                justify-content: center;
+                margin: 0 auto 60px;
+            }
+        }
+
+        &-right{
+            width: 55%;
+
+            @include responsive(MobileTablet) {
+                width: 100%;
+                flex: 100%;
+            }
+
+            @include responsive(Mobile) {
+                padding: 0 18px;
+            }
+        }
+
+        &-img {
+            height: 400px;
+            width: 400px;
+            object-fit: cover;
+            border-radius: 6px;
+
+            @include responsive(Mobile) {
+                // padding: 0 4px;
+                height: 350px;
+                width: 350px;
+            }
+
+            @include responsive(SmallMobile){
+                height: 300px;
+                width: 300px;
+            }
+        }
+
+        &-title{
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+
+            @include responsive(Mobile) {
+                font-size: 2rem;
+            }
+
+            & span{
+                font-size: 2.3rem;
+                font-weight: 600;
+                color: $primary-color;
+
+                @include responsive(Mobile) {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        &-content {
+            font-size: 1.6rem;
+            text-align: justify;
+            line-height: 2.4rem;
+
+            @include responsive(MobileTablet) {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        &-download {
+            @include button-main;
+            padding: 10px 30px;
+            font-weight: 500;
+
+            &:hover{
+                color: $primary-color;
+                background-color: transparent;
+            }
+        }
+    }
+}

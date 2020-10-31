@@ -1,0 +1,76 @@
+.team{
+    background-color: #111;
+    color: $white-color;
+    font-family: 'Poppins', sans-serif;
+    padding: 100px 0;
+
+    &__content{
+
+    }
+
+    &__title{
+        @include under-line-title(who with me, #111, $white-color)
+    }
+
+    &__carousel{
+
+        @include responsive(Mobile) {
+            margin: 0 15px;
+        }
+        
+        &-item{
+            background-color: #222;
+            border-radius: 6px;
+            padding: 25px 35px;
+            transition: all .3s ease;
+            min-height: 314px;
+
+            &:hover{
+                background-color: $primary-color;
+                cursor: grab;
+            }
+        }
+
+        &-item:hover &-img{
+            border-color: #fff;
+        }
+
+        &-item:hover &-container{
+            transform: scale(1.05);
+        }
+
+        &-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s ease;
+        }
+
+        &-img{
+            height: 150px;
+            width: 150px !important;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid $primary-color;
+            transition: all .3s ease;
+        }
+
+        &-title{
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin: 10px 0 7px 0;
+        }
+
+        &-content{
+            font-size: 1.6rem;
+            font-weight: 200;
+            text-align: center;
+            line-height: 2rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+    }
+}

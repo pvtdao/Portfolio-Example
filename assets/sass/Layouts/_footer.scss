@@ -1,0 +1,32 @@
+.footer{
+    font-family: 'Poppins', sans-serif;
+    padding: 25px 0px;
+    background-color: #111;
+    color: $white-color;
+    text-align: center;
+
+    & span{
+        font-size: 1.6rem;
+    }
+
+    &__container{
+        display: flex;
+        justify-content: center;
+        @include responsive(Mobile) {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__info{
+        margin-bottom: 10px;
+    }
+
+    &__link {
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 1.6rem;
+    }
+}

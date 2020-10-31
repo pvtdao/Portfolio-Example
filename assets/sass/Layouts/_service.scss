@@ -1,0 +1,81 @@
+.service {
+    background-color: #111;
+    color: $white-color;
+    font-family: 'Poppins', sans-serif;
+    padding: 100px 0;
+    overflow: hidden;
+
+    &__title{
+        @include under-line-title(What i provide, #111, $white-color)
+    }
+
+    &__content {
+       width: 100%;
+    }
+
+    &__card {
+        cursor: pointer;
+        text-align: center;
+        background-color: #222;
+        border-radius: 6px;
+        padding: 20px 25px;
+        margin-top: 20px;
+        transition: all .3s ease;
+        max-height: 300px;
+        user-select: none;
+
+        @include responsive(Tablet) {
+            margin-top: 16px;
+        }
+
+        @include responsive(Mobile) {
+            width: 90%;
+            margin: 16px auto 0 auto;
+        }
+
+        &:hover {
+            background-color: $primary-color;
+        }
+
+        &:hover &-icon {
+            color: $white-color;
+        }
+
+        &:hover &-content{
+            transform: scale(1.05);
+        }
+
+        &-content {
+            transition: all .3s ease;
+        }
+
+        &-icon {
+            font-size: 5rem;
+            color: $primary-color;
+            transition: all .2s ease;
+        }
+
+        &-title {
+            width: 100%;
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin: 10px 0 10px 0;
+            line-height: 3rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        &-info {
+            font-size: 1.6rem;
+            font-weight: 300;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-align: center;
+            line-height: 2.4rem;
+        }
+    }
+}

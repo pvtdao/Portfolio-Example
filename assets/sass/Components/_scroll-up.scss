@@ -1,0 +1,28 @@
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 40px;
+    background-color: $primary-color;
+    right: 20px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-radius: 6px;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease;
+
+    &.show{
+        bottom: 30px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    & i{
+        font-size: 3rem;
+        color: $white-color;
+    }
+}

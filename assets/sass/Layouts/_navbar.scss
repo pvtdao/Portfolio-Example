@@ -1,0 +1,139 @@
+.nav {
+    position: fixed;
+    // background-color: $primary-color;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 30px 0;
+    transition: all .3s ease;
+    z-index: 11;
+
+    &.sticky{
+        padding: 15px 0;
+        background-color: $primary-color;
+
+        & .nav__item{
+
+            &-link{
+                color: $white-color;
+                transition: color .3s ease;
+
+                @include responsive(PC) {
+                    font-size: 1.8rem;
+                    margin-left: 25px;
+                    font-weight: 500;
+                }
+                
+                &:hover{
+                    color: $primary-color;
+
+                    @include responsive(PC) {
+                        color: $white-color;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+
+    &__logo{
+
+        @include responsive(Mobile) {
+            padding: 0 16px;
+        }
+
+        &-link{
+            color: $white-color;
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        &-title{
+
+            &-span{
+                font-size: 3.5rem;
+                font-weight: 600;
+                color: $primary-color;
+                transition: all .3s ease;
+
+            }
+        }
+    }
+
+    &__list{
+        list-style: none;
+
+        @include responsive(MobileTablet) {
+            position: fixed;
+            background-color: #111;
+            top: 0;
+            width: 100%;
+            left: -100%;
+            bottom: 0;      
+            text-align: center;
+            transition: all .4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &.active{
+
+            @include responsive(MobileTablet) {
+                left: 0%;
+            }
+        }
+    }
+
+    &__item{
+        display: inline-block;
+
+        @include responsive(MobileTablet) {
+            display: block;
+        }
+
+        &-link{
+            color: $white-color;
+            font-size: 1.8rem;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color .3s ease;
+            &:hover{
+                color: $primary-color;
+            }
+
+            @include responsive(MobileTablet) {
+                display: inline-block;
+                font-size: 2.5rem;
+                margin: 20px 0;
+            }
+             
+        }
+    }
+
+    &__menu{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        color: $white-color;
+        font-size: 3.5rem;
+        cursor: pointer;
+
+        @include responsive(MobileTablet) {
+            display: flex;
+            z-index: 50;
+        }
+
+        & i.active::before {
+
+            @include responsive(MobileTablet) {
+                content: '\f00d';
+            }
+        }
+
+    }
+    
+
+}
